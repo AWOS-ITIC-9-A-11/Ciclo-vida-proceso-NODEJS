@@ -1,0 +1,23 @@
+//EL SIGUIENTE EJEMPLO MUESTRA EL CICLO DE VIDA DE UN PROCESO DE NODEJS.
+//PRIMERO EJECUTA LAS TAREAS SÍNCRONAS (MAIN()) DE LA APLICACIÓN.
+
+console.log('1.- Inicio del programa.'); // TAREA SÍNCRONA
+
+//DESPUÉS REGISTRA LAS TAREAS ASÍNCRONAS Y LAS MANDA AL 'NODE APIS' PARA SU PROCESAMIENTO.
+
+setTimeout(() => { // TAREA ASÍNCRONA
+    console.log('2.- Primer Timeout.');
+}, 3000);
+
+setTimeout(() => { // TAREA ASÍNCRONA
+    console.log('3.- Segundo Timeout.');
+}, 0);
+
+setTimeout(() => { // TAREA ASÍNCRONA
+    console.log('4.- Tercer Timeout.');
+}, 0);
+
+console.log('5.- Fin del programa.'); // TAREA SÍNCRONA
+
+// UNA VEZ TERMINADAS LAS TAREAS SÍNCRONAS CHECA LA 'PILA DE CALLBACKS' PARA VER SI HAY TAREAS
+// YA TERMINADAS Y LISTAS PARA SER MOSTRADAS EN EL HILO DE PROCESOS DE NODEJS
